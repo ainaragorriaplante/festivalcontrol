@@ -1,0 +1,79 @@
+{
+  "C:\\Users\\Usuario\\OneDrive\\Escritorio\\AGP\\devops\\festivalcontrol\\backend\\serverless.yml": {
+    "versionFramework": "4.45.0",
+    "servicePath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\AGP\\devops\\festivalcontrol\\backend\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "festival-control-api",
+      "frameworkVersion": "~4.45.0",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs22.x",
+        "stage": "dev",
+        "region": "us-east-1",
+        "versionFunctions": true
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "hello": {
+          "handler": "dist/hello.handler",
+          "events": [
+            {
+              "http": {
+                "path": "hello",
+                "method": "get",
+                "cors": true
+              }
+            }
+          ]
+        },
+        "getEvent": {
+          "handler": "dist/getEvent.handler",
+          "events": [
+            {
+              "http": {
+                "path": "events/{id}",
+                "method": "get",
+                "cors": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs22.x",
+      "stage": "dev",
+      "region": "us-east-1",
+      "versionFunctions": true
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "serviceRawFile": "service: festival-control-api\r\nframeworkVersion: ~4.45.0\r\n \r\nprovider:\r\n  name: aws\r\n  runtime: nodejs22.x\r\n \r\nplugins:\r\n  - serverless-offline\r\n \r\nfunctions:\r\n  hello:\r\n    handler: dist/hello.handler\r\n    events:\r\n      - http:\r\n          path: hello\r\n          method: get\r\n          cors: true\r\n \r\n  getEvent:\r\n    handler: dist/getEvent.handler\r\n    events:\r\n      - http:\r\n          path: events/{id}\r\n          method: get\r\n          cors: true\r\n ",
+    "command": [
+      "offline"
+    ],
+    "options": {
+      "help": true
+    },
+    "orgId": "53d0af0f-b360-4159-90af-8739be85877b",
+    "orgName": "a27287",
+    "userId": "sk3ssRGmslYzp84kwk",
+    "userName": "a27287",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
